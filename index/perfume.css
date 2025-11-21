@@ -1,0 +1,369 @@
+:root {
+    /* 顏色定義 */
+    --color-warm-apricot: #F7EDE4; /* 網頁主要背景 */
+    --color-terracotta-brown: #B56557; /* 輔助色/Hover */
+    --color-soft-gold: #C8A97E; /* 強調色 */
+    --color-moss-green: #5E746F; /* 強調色 2 */
+    --color-dark-taupe: #3D3D3D; /* 通用文字色 */
+
+    --header-max-width: 1920px;
+
+    /* 字體 */
+    --font-primary: 'Noto Sans TC', sans-serif;
+}
+body {
+    font-family: var(--font-primary);
+    margin: 0;
+    padding: 0;
+}
+.main-header {
+    width: 100%;
+    height: 96px; 
+    background-color: white;
+}  
+.header-container {
+    max-width:1920px;
+    height: 100%;
+    margin: 0 auto; 
+    padding: 0 40px; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+.header-logo a {
+    line-height: 1;
+}
+.header-logo .logo-img {
+    max-height: 60px;
+    max-width: 250px; 
+    display: block;
+}
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 36px; /* 項目間距 */
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: var(--color-dark-taupe); 
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px 0; 
+    transition: color 0.2s ease-in-out;
+}
+
+.main-nav ul li a:hover {
+    color: var(--color-terracotta-brown);
+}
+.header-icons {
+    display: flex;
+    gap: 20px; 
+}
+
+.material-symbols-rounded {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+    color: var(--color-dark-taupe);
+}
+/* 主視覺區塊 (Hero Section)  */
+.hero-section {
+    padding: 0; 
+}
+
+.hero-content-area {
+    max-width: var(--header-max-width); 
+    margin: 0 auto; 
+    height: 300px; 
+    padding: 0 40px; 
+
+    /* **圖片作為背景圖設定** */
+    background-image: url('images/perfume_banner.jpg');
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-end; /* 將文字推到最右側 */
+    align-items: center;
+}
+
+.hero-content {
+    width: 50%; 
+    text-align: left;
+    padding-bottom: 50px; 
+}
+
+.hero-content .hero-title {
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--color-dark-taupe); 
+    margin-top: 0;
+    margin-bottom: 20px; 
+}
+
+.hero-content .hero-slogan {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--color-dark-taupe);
+    line-height: 1.5;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+/* 篩選器 */
+
+.filter-sort-bar {
+    padding: 30px 0;
+    border-bottom: 1px solid #E0E0E0; 
+}
+
+.filter-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 左側篩選下拉按鈕群組 */
+.filters-dropdowns {
+    display: flex;
+    gap: 15px; 
+}
+
+/* 每個下拉選單的容器 */
+.dropdown-container {
+    position: relative;
+}
+
+/* 篩選器 */
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px; 
+    border: none; 
+    
+    background-color: white;
+    color: var(--color-dark-taupe); 
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.dropdown-btn:hover {
+    background-color: #F0F0F0;
+}
+
+.dropdown-btn .icon {
+    font-size: 18px;
+    margin-left: 5px; 
+}
+
+/* 右側排序與計數 */
+.sort-display {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.product-count {
+    font-size: 14px;
+    color: var(--color-dark-taupe);
+    margin: 0;
+}
+/* 排序按鈕樣式與篩選按鈕一致 */
+.sort-btn {
+    border: none;
+}
+
+/* 下拉選單內容 */
+.dropdown-menu {
+    display: none; 
+
+    position: absolute;
+    top: 100%; /* 位於按鈕下方 */
+    left: 0;
+    z-index: 10;
+    
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 4px;
+    padding: 10px 0;
+    min-width: 150px;
+    margin-top: 5px; 
+}
+
+/* 懸停顯示 */
+.dropdown-container:hover .dropdown-menu {
+    display: block; 
+}
+
+.dropdown-menu a {
+    display: block;
+    text-decoration: none;
+    color: var(--color-dark-taupe);
+    padding: 8px 15px;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--color-warm-apricot); 
+}
+
+/* 香水產品 */
+.perfume-products-section {
+    padding: 40px 0 80px 0; 
+    background-color: white; 
+}
+
+/* 網格佈局：四列等寬 */
+.perfume-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px; 
+}
+
+/* 香水產品卡片*/
+.perfume-card {
+    background-color: white; 
+    transition: box-shadow 0.3s;
+}
+
+.perfume-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+.perfume-card .card-image-wrap {
+    padding-bottom: 100%; 
+    height: 0; 
+    position: relative;
+    overflow: hidden;
+}
+
+.perfume-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.perfume-card .card-text-content {
+    padding: 15px 10px;
+}
+
+/* 香水分類/香調標籤 */
+.perfume-card .perfume-category {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--color-moss-green); 
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+/* 香水名稱 */
+.perfume-card .perfume-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-dark-taupe);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* 價格與購物車排版 */
+.perfume-card .product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5px;
+}
+.perfume-card .product-price {
+    font-size: 16px;
+    font-weight: 700; 
+    color: var(--color-terracotta-brown); 
+}
+.perfume-card .cart-icon {
+    font-size: 22px;
+    color: var(--color-dark-taupe);
+}
+/* Footer */
+.main-footer {
+    background-color: var(--color-warm-apricot); 
+    padding: 60px 0 20px 0; 
+    border-top: 1px solid #F0E0D0; 
+}
+
+/* Footer 多欄佈局 */
+.footer-layout {
+    display: flex;
+    justify-content: space-between; /* 欄位之間分散對齊 */
+    gap: 30px; 
+    margin-bottom: 40px;
+}
+
+/* 欄位 */
+.footer-col {
+    /* 讓右側三欄佔據相等的空間，左側 (info) 略寬 */
+    flex: 1;
+}
+.footer-col-info {
+    flex: 1.2; 
+}
+
+
+/* 欄位標題 */
+.footer-title, .footer-heading {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-dark-taupe); 
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* 聯絡資訊 */
+.footer-contact {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--color-dark-taupe);
+    margin-bottom: 20px;
+}
+
+/* 連結列表樣式 */
+.footer-col ul {
+    list-style: none; /* 移除列表點 */
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--color-dark-taupe);
+    transition: color 0.2s;
+}
+
+.footer-col ul li a:hover {
+    color: var(--color-moss-green); /* 懸停時使用苔綠色 */
+}
+
+/* 版權 */
+.footer-copyright {
+    text-align: center;
+    border-top: 1px solid #E0E0D0; 
+    padding-top: 15px;
+}
+
+.footer-copyright p {
+    font-size: 12px;
+    color: var(--color-dark-taupe);
+    opacity: 0.7;
+    margin: 0;
+}

@@ -1,0 +1,532 @@
+:root {
+    /* 顏色定義 */
+    --color-warm-apricot: #F7EDE4; /* 網頁主要背景 */
+    --color-terracotta-brown: #B56557; /* 輔助色/Hover */
+    --color-soft-gold: #C8A97E; /* 強調色 */
+    --color-moss-green: #5E746F; /* 強調色 2 */
+    --color-dark-taupe: #3D3D3D; /* 通用文字色 */
+
+    --header-max-width: 1920px;
+
+    /* 字體 */
+    --font-primary: 'Noto Sans TC', sans-serif;
+}
+body {
+    font-family: var(--font-primary);
+    margin: 0;
+    padding: 0;
+}
+.main-header {
+    width: 100%;
+    height: 96px; 
+    background-color: white;
+}  
+.header-container {
+    max-width:1920px;
+    height: 100%;
+    margin: 0 auto; 
+    padding: 0 40px; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+}
+.header-logo a {
+    line-height: 1;
+}
+.header-logo .logo-img {
+    max-height: 60px;
+    max-width: 250px; 
+    display: block;
+}
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 36px; /* 項目間距 */
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: var(--color-dark-taupe); 
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px 0; 
+    transition: color 0.2s ease-in-out;
+}
+
+.main-nav ul li a:hover {
+    color: var(--color-terracotta-brown);
+}
+.header-icons {
+    display: flex;
+    gap: 20px; 
+}
+
+.material-symbols-rounded {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+    color: var(--color-dark-taupe);
+}
+/* 主視覺區塊 (Hero Section)  */
+.hero-section {
+    padding: 0; 
+}
+
+.hero-content-area {
+    max-width: var(--header-max-width); 
+    margin: 0 auto; 
+    height: 400px; 
+    padding: 0 40px; 
+
+    /* **圖片作為背景圖設定** */
+    background-image: url('images/hero_banner.jpg');
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-end; /* 將文字推到最右側 */
+    align-items: center;
+}
+
+.hero-content {
+    width: 50%; 
+    text-align: left;
+    padding-bottom: 50px; 
+}
+
+.hero-content .hero-title {
+    font-size: 48px;
+    font-weight: 500;
+    color: var(--color-dark-taupe); 
+    margin-top: 0;
+    margin-bottom: 20px; 
+}
+
+.hero-content .hero-slogan {
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--color-dark-taupe);
+    line-height: 1.5;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+/* 產品推薦區塊 */
+
+/* 區塊標題樣式 */
+.section-title {
+    font-size: 32px;
+    font-weight: 700; 
+    color: var(--color-terracotta-brown); 
+    text-align: center; /* 標題居中 */
+    margin-top: 0;
+    margin-bottom: 40px; 
+}
+/* 產品推薦區塊容器 */
+.page-content-wrapper {
+    max-width: var(--header-max-width); 
+    margin: 0 auto; 
+    padding: 40px; 
+}
+/* 背景色 */
+.apricot-bg {
+    background-color: var(--color-warm-apricot);
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 四個等寬 */
+    gap: 30px; 
+}
+/* 產品卡片 */
+.product-card {
+    background-color: white; 
+    border-radius: 4px; 
+    overflow: hidden; 
+    transition: transform 0.3s ease-in-out;
+}
+.product-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.product-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+.product-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 內容區塊的內邊距 */
+.card-content-body {
+    padding: 15px;
+}
+
+/* 1. 產品名稱樣式 */
+.product-card .product-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-dark-taupe); 
+    margin-top: 0;
+    margin-bottom: 5px; 
+}
+
+/* 特點描述樣 */
+.product-card .product-desc {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-moss-green); 
+    margin-top: 0;
+    margin-bottom: 10px; 
+}
+
+.product-footer {
+    display: flex;
+    justify-content: space-between; /* 價格左，ICON右 */
+    align-items: center;
+    padding-top: 5px;
+}
+/*價格*/
+.product-card .product-price {
+    font-size: 18px;
+    font-weight: 700; 
+    color: var(--color-terracotta-brown); 
+}
+
+.product-footer .cart-icon {
+    font-family: 'Material Symbols Rounded';
+    font-size: 24px;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    cursor: pointer;
+    color: var(--color-dark-taupe); 
+    transition: color 0.2s;
+}
+
+.product-footer .cart-icon:hover {
+    color: var(--color-soft-gold); 
+}
+/* 手作課程區塊 */
+.course-feature-section {
+    padding: 80px 0; 
+}
+
+/* 左右分欄 */
+.split-course-layout {
+    display: flex;
+    width: 100%; 
+    min-height: 500px; 
+    background-color: white; 
+    border-radius: 6px; 
+    overflow: hidden; 
+}
+
+/* 左側內容區塊 (白色) */
+.course-content-col {
+    flex: 1; 
+    padding: 60px 40px; 
+}
+
+.course-main-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-terracotta-brown); 
+    margin-top: 10;
+    margin-bottom: 10px;
+}
+
+.course-subtitle {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-dark-taupe); 
+    margin-bottom: 25px;
+}
+
+.course-description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--color-dark-taupe);
+    margin-bottom: 30px;
+}
+
+/* 2. 右側圖片區塊 */
+.course-image-col {
+    flex: 1; 
+    background-image: url('images/course_feature.png'); 
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat;
+}
+
+/* 按鈕 */
+.btn-primary {
+    display: inline-block;
+    padding: 12px 30px;
+    text-decoration: none;
+    background-color: var(--color-moss-green); /* 苔綠色按鈕背景 */
+    color: white; 
+    border-radius: 25px; 
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-soft-gold); /* 懸停時使用溫柔金 */
+}
+/* 香氛知識區塊1 */
+.aroma-knowledge-section {
+    padding: 80px 0; 
+}
+
+/* 左右分欄容器*/
+.split-knowledge-layout {
+    display: flex;
+    width: 100%; 
+    min-height: 480px; 
+    border-radius: 6px; 
+    overflow: hidden; 
+}
+
+/* 左側內容區塊  */
+.knowledge-content-col {
+    flex: 1; 
+    background-color: var(--color-moss-green); 
+    padding: 60px 40px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* 標題、副標題、描述：全部使用白色/淺色，以適應深色背景 */
+.knowledge-main-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-warm-apricot);
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.knowledge-subtitle {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--color-warm-apricot); 
+    margin-bottom: 25px;
+}
+
+.knowledge-description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--color-warm-apricot);
+    margin-bottom: 30px;
+}
+
+/* 右側圖片區塊 */
+.knowledge-image-col {
+    flex: 1; 
+    background-image: url('images/blog.png'); 
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat;
+}
+
+/* 按鈕 */
+.btn-secondary {
+    display: inline-block;
+    padding: 12px 30px;
+    text-decoration: none;
+    background-color: var(--color-moss-green); /* 苔綠色按鈕背景 */
+    color: white; 
+    border-radius: 25px; 
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-soft-gold); /* 懸停時使用溫柔金 */
+}
+
+/* 最新熱門文章區塊 */
+.latest-articles-section {
+    background-color: white; 
+    padding: 80px 0; 
+}
+
+/* blog區塊標題*/
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; 
+}
+
+/* 文章卡片 */
+.article-card {
+    background-color: white; 
+    border: 1px solid #E0E0E0; /* 淺灰色邊框 */
+    border-radius: 4px; 
+    overflow: hidden; 
+    transition: box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column; 
+}
+.article-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* 輕微陰影 */
+}
+
+/* 確保整個卡片連結顯示正常 */
+.article-card a {
+    text-decoration: none;
+    color: inherit;
+    display: flex; /* 讓 a 內部也用 Flexbox */
+    flex-direction: column;
+    height: 100%; /* 確保連結佔滿卡片高度 */
+}
+
+/* 圖片容器 */
+.card-image-wrap {
+    width: 100%;
+    height: 200px; 
+    overflow: hidden; 
+}
+.article-card img {
+    width: 100%;
+    height: 100%; /* 圖片填滿容器 */
+    object-fit: cover; 
+    display: block;
+}
+
+/* 卡片文字內容區塊 */
+.card-text-content {
+    padding: 20px;
+    /* 讓文字內容區塊佔據剩餘空間，確保卡片等高 */
+    flex-grow: 1; 
+    display: flex; /* 用 Flexbox 讓內部元素堆疊 */
+    flex-direction: column;
+}
+
+/* 分類與閱讀時間的容器 */
+.article-meta {
+    display: flex;
+    justify-content: space-between; 
+    margin-bottom: 10px;
+}
+
+/* 文章分類 */
+.article-card .article-category {
+    font-size: 14px;
+    font-weight: 300; 
+    color: var(--color-terracotta-brown); /* 陶土棕 */
+    margin: 0;
+}
+
+/* 閱讀時間 */
+.article-card .article-read-time {
+    font-size: 14px;
+    font-weight: 300; 
+    color: var(--color-moss-green); /* 苔綠色 */
+    margin: 0;
+}
+
+/* 文章標題 */
+.article-card .article-title {
+    font-size: 18px;
+    font-weight: 500; 
+    line-height: 1.5;
+    color: var(--color-dark-taupe); 
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* 文章摘要 */
+.article-card .article-summary {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-dark-taupe); 
+    margin-top: auto; 
+    margin-bottom: 0;
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--color-warm-apricot); 
+    padding: 60px 0 20px 0; 
+    border-top: 1px solid #F0E0D0; 
+}
+
+/* Footer 多欄佈局 */
+.footer-layout {
+    display: flex;
+    justify-content: space-between; /* 欄位之間分散對齊 */
+    gap: 30px; 
+    margin-bottom: 40px;
+}
+
+/* 欄位 */
+.footer-col {
+    /* 讓右側三欄佔據相等的空間，左側 (info) 略寬 */
+    flex: 1;
+}
+.footer-col-info {
+    flex: 1.2; 
+}
+
+
+/* 欄位標題 */
+.footer-title, .footer-heading {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-dark-taupe); 
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* 聯絡資訊 */
+.footer-contact {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--color-dark-taupe);
+    margin-bottom: 20px;
+}
+
+/* 連結列表樣式 */
+.footer-col ul {
+    list-style: none; /* 移除列表點 */
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--color-dark-taupe);
+    transition: color 0.2s;
+}
+
+.footer-col ul li a:hover {
+    color: var(--color-moss-green); /* 懸停時使用苔綠色 */
+}
+
+/* 版權 */
+.footer-copyright {
+    text-align: center;
+    border-top: 1px solid #E0E0D0; 
+    padding-top: 15px;
+}
+
+.footer-copyright p {
+    font-size: 12px;
+    color: var(--color-dark-taupe);
+    opacity: 0.7;
+    margin: 0;
+}
