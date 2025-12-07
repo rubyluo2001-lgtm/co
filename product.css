@@ -1,0 +1,314 @@
+/* 基礎重置 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: '微軟正黑體', 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f6f2; /* 模擬您截圖中的淺米色背景 */
+}
+
+/* 容器與版面配置 */
+.product-page-container {
+    max-width: 1200px;
+    margin: 40px auto; /* 置中並提供上下邊距 */
+    padding: 0 20px;
+}
+
+/* --- 商品詳情區 --- */
+.product-detail {
+    display: flex; /* 啟用 Flexbox 佈局 */
+    gap: 50px; /* 圖片和資訊之間的間距 */
+    padding-bottom: 50px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 左側圖片區 */
+.product-image-gallery {
+    flex: 1; /* 佔用可用空間的 1 份 */
+    max-width: 550px; /* 限制圖片區最大寬度 */
+}
+
+.main-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* 柔和的圓角 */
+}
+
+/* 右側資訊區 */
+.product-info {
+    flex: 1; /* 佔用可用空間的 1 份 */
+}
+
+.product-title {
+    font-size: 2.2em;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #4a4a4a;
+}
+
+/* 評分區 */
+.rating-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.stars {
+    color: #e6a702; /* 星星顏色 */
+    font-size: 1.1em;
+    margin-right: 10px;
+}
+
+.rating-score {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.product-price {
+    font-size: 2em;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.shipping-info {
+    color: #777;
+    margin-bottom: 30px;
+    font-size: 0.9em;
+}
+
+.product-description p {
+    margin-bottom: 20px;
+    font-size: 1em;
+}
+
+/* 動作區 (數量選擇和按鈕) */
+.product-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.quantity-selector {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.quantity-selector button {
+    background: #f0f0f0;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.quantity-selector input {
+    width: 50px;
+    text-align: center;
+    border: none;
+    font-size: 1em;
+    padding: 10px 0;
+}
+
+.add-to-cart-btn {
+    background-color: #7b9c66; /* 模擬 Nectar & Co. 的綠色調 */
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #6a8853;
+}
+
+/* --- 顧客評論區 --- */
+.customer-reviews {
+    padding: 50px 0;
+}
+
+.customer-reviews h2 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    color: #4a4a4a;
+}
+
+.review-item {
+    border-top: 1px solid #eee;
+    padding: 20px 0;
+}
+
+.reviewer-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.reviewer-name {
+    font-weight: bold;
+}
+
+.review-date {
+    color: #888;
+    font-size: 0.9em;
+}
+
+.review-title {
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.review-rating {
+    margin-bottom: 10px;
+}
+
+.review-text {
+    margin-bottom: 15px;
+    font-size: 0.95em;
+}
+
+.review-images img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.page-content-wrapper {
+    max-width: 1319px; 
+    margin: 0 auto;    
+    padding: 0 40px;   
+}
+/* 手機 */
+@media (max-width: 768px) {
+    /* 通用調整 */
+    .header-container,
+    .page-content-wrapper {
+        padding: 0 20px;
+    }
+
+    /* A. 頁首導覽列調整 */
+    .main-header {
+        height: 80px; 
+    }
+    
+    /* 調整 Logo 尺寸 */
+    .header-logo img {
+        max-height: 40px;
+    }
+
+    /* 手機版導覽列預設隱藏 */
+    .main-nav {
+        margin-left: 0; /* 移除自動邊距 */
+        margin-right: 0; /* 移除右側邊距 */
+        display: none; 
+    }
+
+    /* 顯示漢堡選單圖示 (Icons 才能靠右) */
+    .menu-icon {
+        display: block; 
+        cursor: pointer;
+    }
+    
+    /* Icons 容器間距設定不變，確保 Icons 緊密靠右 */
+    .header-icons {
+        display: flex;
+        gap: 20px; 
+    }
+    
+    /* 手機選單展開  */
+    .main-nav.active {
+        display: block; 
+        position: absolute;
+        top: 80px; 
+        left: 0;
+        width: 100%;
+        background-color: white; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 99;
+        padding: 10px 20px; 
+    }
+
+    .main-nav.active ul {
+        flex-direction: column; 
+        padding: 0; 
+        gap: 15px;
+        list-style: none;
+    }
+
+    .main-nav.active ul li a {
+        display: block;
+        padding: 8px 0;
+        font-size: 16px; 
+        color: var(--color-dark-taupe); 
+    }
+    .product-detail {
+        /* 將 Flex 佈局改為垂直堆疊 */
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* 圖片區在小螢幕上可以佔滿寬度 */
+    .product-image-gallery {
+        max-width: 100%;
+    }
+
+    /* 調整標題字體大小 */
+    .product-title {
+        font-size: 1.8em;
+    }
+
+    .product-price {
+        font-size: 1.8em;
+    }
+
+    /* 動作區在小螢幕上讓按鈕佔滿寬度 */
+    .product-actions {
+        flex-direction: column;
+    }
+
+    .quantity-selector {
+        width: 100%; /* 讓數量選擇器佔滿一行 */
+        justify-content: space-between;
+    }
+
+    .quantity-selector input {
+        width: 100px; /* 給輸入框足夠空間 */
+    }
+
+    .add-to-cart-btn {
+        width: 100%; /* 讓加入購物車按鈕佔滿一行 */
+        padding: 15px; /* 增加點擊區域 */
+    }
+    /* 頁尾調整 */
+    .main-footer {
+        padding: 40px 0 20px 0;
+    }
+    
+    .footer-layout {
+        flex-direction: column; 
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .footer-col, 
+    .footer-col-info {
+        flex: 100%; 
+    }
+
+    .footer-col-info {
+        margin-bottom: 20px;
+    }
+}

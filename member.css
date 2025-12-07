@@ -1,0 +1,261 @@
+/* 彈出視窗總體設置 (遮罩層) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* 黑色半透明背景 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* 確保在所有內容之上 */
+}
+
+.modal-overlay.hidden {
+    display: none; /* 預設隱藏 */
+}
+
+/* 登入視窗本體 */
+.login-modal {
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 400px; /* 限制最大寬度 */
+    position: relative;
+    font-family: var(--font-primary);
+}
+
+/* 關閉按鈕 */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #999;
+    cursor: pointer;
+}
+
+/* Logo 和標題 */
+.logo-placeholder {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-placeholder img {
+    height: 60px; /* 調整 Logo 大小 */
+}
+
+.welcome-title {
+    font-size: 1.8em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 5px;
+    color: var(--color-dark-taupe);
+}
+
+.login-prompt {
+    text-align: center;
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* --- 社交媒體登入 --- */
+.social-login {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5em;
+    color: white;
+    transition: transform 0.2s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+/* 顏色定制 */
+.social-icon.line { background-color: #00B900; }
+.social-icon.google { background-color: #DB4437; }
+.social-icon.facebook { background-color: #4267B2; }
+
+
+/* --- 分隔線 --- */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    color: #aaa;
+    font-size: 0.9em;
+}
+
+.divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+}
+
+.divider:not(:empty)::before {
+    margin-right: .5em;
+}
+
+.divider:not(:empty)::after {
+    margin-left: .5em;
+}
+
+/* --- 表單樣式 --- */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: var(--font-primary);
+    background-color: var(--color-warm-apricot); /* 輸入框背景色 */
+}
+
+.password-group {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+}
+
+
+/* --- 選項與連結 --- */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    margin-bottom: 25px;
+}
+
+.forgot-password {
+    color: #555;
+    text-decoration: none;
+}
+
+/* 自定義 Checkbox 樣式 */
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    user-select: none;
+}
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkmark {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #eee;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+.checkbox-container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+.checkbox-container input:checked ~ .checkmark {
+    background-color: var(--color-moss-green); /* 選中後的顏色 */
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+.checkbox-container .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+/* 登入按鈕 */
+.login-button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--color-dark-taupe); 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #2b2b2b;
+}
+
+/* 底部連結 */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 25px;
+    font-size: 0.9em;
+}
+
+.footer-links p {
+    color: #555;
+}
+
+.register-link {
+    color: var(--color-moss-green);
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-moss-green);
+    transition: color 0.3s;
+}
+
+/* RWD  */
+@media (max-width: 480px) {
+    .login-modal {
+        /* 在手機上可以佔據更多螢幕高度 */
+        margin: 20px;
+    }
+}

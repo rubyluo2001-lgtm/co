@@ -1,75 +1,8 @@
-:root {
-    /* 顏色定義 */
-    --color-warm-apricot: #F7EDE4; /* 網頁主要背景 */
-    --color-terracotta-brown: #B56557; /* 輔助色/Hover */
-    --color-soft-gold: #C8A97E; /* 強調色 */
-    --color-moss-green: #5E746F; /* 強調色 2 */
-    --color-dark-taupe: #3D3D3D; /* 通用文字色 */
-
-    --header-max-width: 1920px;
-
-    /* 字體 */
-    --font-primary: 'Noto Sans TC', sans-serif;
-}
-body {
-    font-family: var(--font-primary);
-    margin: 0;
-    padding: 0;
-}
-.main-header {
-    width: 100%;
-    height: 96px; 
-    background-color: white;
-}  
-.header-container {
-    max-width:1920px;
-    height: 100%;
-    margin: 0 auto; 
-    padding: 0 40px; 
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
-}
-.header-logo a {
-    line-height: 1;
-}
-.header-logo .logo-img {
-    max-height: 60px;
-    max-width: 250px; 
-    display: block;
-}
-.main-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 36px; /* 項目間距 */
-}
-
-.main-nav ul li a {
-    text-decoration: none;
-    color: var(--color-dark-taupe); 
-    font-size: 14px;
-    font-weight: 400;
-    padding: 10px 0; 
-    transition: color 0.2s ease-in-out;
-}
-
-.main-nav ul li a:hover {
-    color: var(--color-terracotta-brown);
-}
-.header-icons {
-    display: flex;
-    gap: 20px; 
-}
-
-.material-symbols-rounded {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24;
-    color: var(--color-dark-taupe);
+/* 設定通用內容區塊的最大寬度與置中 (修正點一) */
+.page-content-wrapper {
+    max-width: 1319px; /* 設定內容區塊的最大寬度為 1319px */
+    margin: 0 auto;    /* 讓區塊在頁面中自動置中 */
+    padding: 0 40px;   /* 增加左右內邊距，避免內容緊貼瀏覽器邊緣 */
 }
 /* 主視覺區塊 (Hero Section)  */
 .hero-section {
@@ -195,10 +128,20 @@ body {
     min-width: 150px;
     margin-top: 5px; 
 }
+/* 1. 用於隱藏不符合篩選條件的商品 */
+.perfume-card.hidden {
+    display: none;
+}
 
-/* 懸停顯示 */
-.dropdown-container:hover .dropdown-menu {
-    display: block; 
+/* 2. 篩選條件被選中時的視覺回饋 */
+.dropdown-menu a.active {
+    background-color: var(--color-soft-gold); /* 使用您的強調色 */
+    color: white !important;
+    font-weight: 500;
+}
+
+#scent-dropdown-menu {
+    display: none;
 }
 
 .dropdown-menu a {
@@ -214,7 +157,7 @@ body {
     background-color: var(--color-warm-apricot); 
 }
 
-/* 香水產品 */
+/* 14. 香水產品 */
 .perfume-products-section {
     padding: 40px 0 80px 0; 
     background-color: white; 
@@ -273,6 +216,11 @@ body {
     margin-top: 0;
     margin-bottom: 10px;
 }
+/* 移除所有產品卡片內連結的底線 */
+.perfume-card .product-link {
+    text-decoration: none; /* 👈 關鍵設定：移除底線 */
+    color: inherit; /* 讓連結繼承周圍的文字顏色，防止瀏覽器預設成藍色 */
+}
 
 /* 價格與購物車排版 */
 .perfume-card .product-footer {
@@ -289,6 +237,20 @@ body {
 .perfume-card .cart-icon {
     font-size: 22px;
     color: var(--color-dark-taupe);
+}
+/* 加入購物車功能 (新增 CSS) */
+
+/* 購物車圖示懸停時的樣式 */
+.perfume-card .cart-icon {
+    /* 確保購物車圖示在點擊前是可互動的 */
+    cursor: pointer; 
+    transition: transform 0.1s;
+}
+
+/* 點擊加入購物車時的動畫/樣式 */
+.perfume-card .cart-icon.added {
+    color: var(--color-soft-gold) !important; /* 變成金色 */
+    transform: scale(1.2); /* 稍微放大 */
 }
 /* Footer */
 .main-footer {
@@ -366,4 +328,147 @@ body {
     color: var(--color-dark-taupe);
     opacity: 0.7;
     margin: 0;
+}
+/* 手機版  */
+@media (max-width: 768px) {
+    
+    /* 通用調整 */
+    .header-container,
+    .page-content-wrapper {
+        padding: 0 20px;
+    }
+
+    /* A. 頁首導覽列調整 */
+    .main-header {
+        height: 80px; 
+    }
+    
+    /* 調整 Logo 尺寸 */
+    .header-logo img {
+        max-height: 40px;
+    }
+
+    /* 手機版導覽列預設隱藏 */
+    .main-nav {
+        margin-left: 0; /* 移除自動邊距 */
+        margin-right: 0; /* 移除右側邊距 */
+        display: none; 
+    }
+
+    /* 顯示漢堡選單圖示 (Icons 才能靠右) */
+    .menu-icon {
+        display: block; 
+        cursor: pointer;
+    }
+    
+    /* Icons 容器間距設定不變，確保 Icons 緊密靠右 */
+    .header-icons {
+        display: flex;
+        gap: 20px; 
+    }
+    
+    /* 手機選單展開  */
+    .main-nav.active {
+        display: block; 
+        position: absolute;
+        top: 80px; 
+        left: 0;
+        width: 100%;
+        background-color: white; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 99;
+        padding: 10px 20px; 
+    }
+
+    .main-nav.active ul {
+        flex-direction: column; 
+        padding: 0; 
+        gap: 15px;
+        list-style: none;
+    }
+
+    .main-nav.active ul li a {
+        display: block;
+        padding: 8px 0;
+        font-size: 16px; 
+        color: var(--color-dark-taupe); 
+    }
+    
+    /* Hero 區塊：全面調整 */
+    .hero-section {
+        padding: 0;
+    }
+    .hero-content-area {
+        height: 200px; /* 進一步縮短高度 */
+        justify-content: center; /* 讓文字置中 */
+        align-items: flex-end; /* 將文字推到底部，視覺上平衡 */
+        background-position: center bottom; /* 調整背景圖焦點 */
+    }
+    .hero-content {
+        width: 100%; /* 文字佔滿寬度 */
+        text-align: center; /* 文字置中 */
+        padding-bottom: 20px; 
+    }
+    .hero-content .hero-title {
+        font-size: 24px; /* 縮小字體 */
+        margin-bottom: 10px;
+        line-height: 1.3;
+    }
+    .hero-content .hero-slogan {
+        font-size: 14px; /* 縮小字體 */
+    }
+
+    /* 篩選器與排序區塊調整 */
+    .filter-controls {
+        flex-direction: column; /* 垂直堆疊篩選器和排序區塊 */
+        align-items: flex-start; /* 靠左對齊 */
+        gap: 10px;
+    }
+    .sort-display {
+        width: 100%; /* 讓排序區塊佔滿寬度 */
+        justify-content: space-between; /* 讓排序按鈕和產品計數分散對齊 */
+        border-top: 1px solid #E0E0E0; /* 增加區隔線 */
+        padding-top: 10px;
+    }
+    .filters-dropdowns {
+        flex-wrap: wrap; /* 篩選下拉選單允許換行 */
+        gap: 10px;
+    }
+
+    /* 產品網格：兩張卡片一排 */
+    .perfume-grid {
+        grid-template-columns: repeat(2, 1fr); /* 核心設定：分為兩欄 */
+        gap: 15px; /* 縮小卡片間距 */
+    }
+
+    /* 產品卡片內容微調 */
+    .perfume-card .card-text-content {
+        padding: 10px 5px; /* 縮小卡片內邊距 */
+    }
+    .perfume-card .perfume-name {
+        font-size: 14px; /* 縮小產品名稱字體 */
+    }
+    .perfume-card .product-price {
+        font-size: 14px; /* 縮小價格字體 */
+    }
+
+    /* 頁尾調整 */
+    .main-footer {
+        padding: 40px 0 20px 0;
+    }
+    
+    .footer-layout {
+        flex-direction: column; 
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .footer-col, 
+    .footer-col-info {
+        flex: 100%; 
+    }
+
+    .footer-col-info {
+        margin-bottom: 20px;
+    }
 }

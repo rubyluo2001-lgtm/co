@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>關於我們 | Nectar & Co.</title>
+    <title>安神夜曲 | Nectar & Co.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <link rel="stylesheet" href="hf.css">
     <link rel="stylesheet" href="member.css">
-    <link rel="stylesheet" href="aboutus.css">
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -47,47 +48,78 @@
 
     </header>
 
-    <main>
+    <main class="product-page-container">
         
-        <section class="hero-section">
-            <img src="images/about_banner.jpg" alt="精油原料與瓶身背景圖" class="hero-bg-image">
-            <div class="hero-content">
-                <div class="line-design line-v-hero"></div> <h1>Nectar & Co.：心靈的花蜜，生活的療癒</h1>
+        <section class="product-detail">
+            
+            <div class="product-image-gallery">
+                <div class="main-image">
+                    <img src="images/perfume_yellow.png" alt="晨曦時光">
+                </div>
+                </div>
+            
+            <div class="product-info">
+                <h1 class="product-title">晨曦時光 </h1>
+                
+                <div class="rating-section">
+                    <span class="stars" aria-label="4.0 星評分">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i> </span>
+                    <span class="rating-score">4.0</span>
+                    <span class="review-count">(105 則評論)</span>
+                </div>
+                
+                <p class="product-price">$780</p>
+                <p class="shipping-info">48小時內發貨 | 全館免運</p>
+                
+                <div class="product-description">
+                    <p>將薰衣草、佛手柑的輕盈配方，佐以檜木、雪松的沉靜，輕柔地引領身心進入寧靜平穩的夢鄉。不含人工香精與酒精，專注於療癒效果的溫和持香性。能作為睡前香氛，協助放鬆舒眠。</p>
+                </div>
+                
+                <div class="product-options">
+                    <label for="volume">容量:</label>
+                    <select id="volume" name="volume">
+                        <option value="100ml">100ml</option>
+                        <option value="50ml">50ml</option>
+                    </select>
+                </div>
+                
+                <div class="product-actions">
+                    <div class="quantity-selector">
+                        <button id="decrement">-</button>
+                        <input type="number" id="quantity" value="1" min="1" max="10">
+                        <button id="increment">+</button>
+                    </div>
+                    <button class="add-to-cart-btn">加入購物車</button>
+                </div>
             </div>
+            
         </section>
 
-        <section class="story-section feature-block reverse-layout">
-            <div class="feature-image-wrapper">
-                <img src="images/about_us1.png" alt="滴精油的圖片">
-                <div class="line-design line-h-bottom"></div> </div>
-            <div class="feature-text">
-                <h2 class="section-title">品牌緣起：從失眠到療癒的探索</h2>
-                <p>Nectar & Co. 的故事源於創辦人對長期失眠問題與尋找深作的深層治癒探索。我們深信純粹、在製程中經得起考驗的天然萃取，是協助身體及心靈找回平衡的重要關鍵。我們對氣味的敏感度，使我們嚴選天然植物精華，專注於提供真正可信賴的芳香療癒配方。我們希望透過嗅覺體驗連結自我，讓每一個呼吸都是療癒的開始。</p>
+        <section class="customer-reviews">
+            <h2>顧客評論</h2>
+            <div class="review-item">
+                <div class="reviewer-header">
+                    <span class="reviewer-name">Sarah L.</span>
+                    <span class="review-date">2個月前</span>
+                </div>
+                <p class="review-title">終於能找到我喜歡的配方!</p>
+                <div class="review-rating">
+                    <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                    <span class="score">5.0</span>
+                </div>
+                <p class="review-text">枕頭一噴，漫天放鬆。桂花甜、少許佛手柑，協調地把檜木的厚重感帶出，讓整體香氣呈現得更輕盈，更適合亞洲人的睡前調。用了半瓶多，是目前最愛。</p>
+                <div class="review-images">
+                    <img src="images/perfume_transparent.png" alt="評論圖片">
+                </div>
             </div>
-        </section>
-
-        <section class="philosophy-section feature-block">
-            <div class="feature-image-wrapper">
-                <img src="images/about_us2.png" alt="Nectar & Co. Logo 圖片">
-                <div class="line-design line-v-side"></div> </div>
-            <div class="feature-text">
-                <h2 class="section-title">我們的哲學：純粹、永續、儀式</h2>
-                <p>純粹：我們只相信最頂級 100% 純天然單方及調和複方天然素材，絕不添加人工香精。永續：我們對人體與自然環境的責任，要求採購過程公開、透明且最高品質。儀式：Nectar & Co. 堅持對待每滴精油友善的態度，我們相信精油是日常生活中的祝福，是我們用香氣對生活說聲感謝。我們不只是在販售產品，而是一個轉運，專注於從氣味開啟美好生活、從香氣找回與環境平衡的一個動作、由生活成了療癒的儀式感。</p>
-            </div>
-        </section>
+            </section>
         
-        <section class="commitment-section feature-block reverse-layout">
-            <div class="feature-image-wrapper">
-                <img src="images/about_us3.png" alt="創辦人圖片">
-            </div>
-            <div class="feature-text">
-                <h2 class="section-title">我們的承諾：專業與感官的昇華</h2>
-                <p>Nectar & Co. 堅守最高的專業標準，我們所有芳療配方皆經由 IFPA 認證註冊芳療師與擁有超過 30 年經驗的配方師調配完成，確保對使用者是安全且溫和的。我們承諾嚴格執行產品的採購、製程及包裝，所有產品皆通過環境友善的嚴苛生產規範。我們承諾將我們的感官體驗與療癒哲學融入每一個 Nectar & Co. 的細節與時刻，創造美好生活品質的昇華與永續。</p>
-            </div>
-        </section>
-
     </main>
-    
+
     <footer class="main-footer apricot-bg">
     <div class="page-content-wrapper">
         
@@ -193,8 +225,8 @@
         </div>
     </div>
 </div>
-<script src="index.js"></script>
-<script src="member.js"></script>
-<script src="aboutus.js"></script>
+    <script src="index.js"></script>
+    <script src="member.js"></script>
+    <script src="product.js"></script>
 </body>
 </html>

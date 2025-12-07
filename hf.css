@@ -1,0 +1,152 @@
+:root {
+    /* 顏色定義 */
+    --color-warm-apricot: #F7EDE4;
+    --color-terracotta-brown: #B56557;
+    --color-soft-gold: #C8A97E;
+    --color-moss-green: #5E746F;
+    --color-dark-taupe: #3D3D3D;
+
+    --header-max-width: 1920px;
+
+    /* 字體 */
+    --font-primary: 'Noto Sans TC', sans-serif;
+}
+body {
+    font-family: var(--font-primary);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header 區塊  */
+.main-header {
+    width: 100%;
+    height: 96px; 
+    background-color: white;
+} 
+.header-container {
+    max-width: 1920px;
+    height: 100%;
+    margin: 0 auto; 
+    padding: 0 40px; 
+    display: flex;
+    justify-content: space-between; /*  Logo, Nav, Icons 分散對齊 */
+    align-items: center; /* 垂直置中 */
+}
+.header-logo a {
+    line-height: 1;
+}
+.header-logo .logo-img {
+    height: 30px; 
+    display: block;
+}
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 36px;
+    /*justify-content: center; //讓導覽列項目居中 */
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: var(--color-dark-taupe); 
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px 0; 
+    transition: color 0.2s ease-in-out;
+}
+
+.main-nav ul li a:hover {
+    color: var(--color-terracotta-brown);
+}
+
+/* icons 區塊  */
+.header-icons {
+    display: flex;
+    gap: 20px; 
+}
+
+/* 漢堡選單 (桌面版隱藏) */
+.menu-icon {
+    display: none; 
+}
+
+.material-symbols-rounded {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+    color: var(--color-dark-taupe);
+    cursor: pointer;
+}
+/* Footer */
+.main-footer {
+    background-color: var(--color-warm-apricot); 
+    padding: 60px 0 20px 0; 
+    border-top: 1px solid #F0E0D0; 
+}
+
+.footer-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; 
+    margin-bottom: 40px;
+}
+
+.footer-col {
+    flex: 1;
+}
+.footer-col-info {
+    flex: 1.2; 
+}
+
+.footer-title, .footer-heading {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-dark-taupe); 
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.footer-contact {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--color-dark-taupe);
+    margin-bottom: 20px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--color-dark-taupe);
+    transition: color 0.2s;
+}
+
+.footer-col ul li a:hover {
+    color: var(--color-moss-green);
+}
+
+.footer-copyright {
+    text-align: center;
+    border-top: 1px solid #E0E0D0; 
+    padding-top: 15px;
+}
+
+.footer-copyright p {
+    font-size: 12px;
+    color: var(--color-dark-taupe);
+    opacity: 0.7;
+    margin: 0;
+}

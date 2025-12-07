@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="stylesheet" href="hf.css">
+    <link rel="stylesheet" href="member.css">
     <link rel="stylesheet" href="perfume.css">
-
 
 </head>
 <body>
@@ -21,19 +23,27 @@
                     <img src="images/logo.jpg" alt="Nectar & Co.">
                 </a>
             </div>
-            <nav class="main-nav">
+            <nav class="main-nav" id="mobile-nav">
                 <ul>
                     <li><a href="perfume.html">香水</a></li>
-                    <li><a href="home_healing.html">居家療癒</a></li>
-                    <li><a href="blog.html">香氛知識</a></li>
-                    <li><a href="course.html">手作課程</a></li>
+                    <li><a href="#">居家療癒</a></li>
+                    <li><a href="#">香氛知識</a></li>
+                    <li><a href="#">手作課程</a></li>
                     <li><a href="aboutus.html">關於我們</a></li>
                 </ul>
             </nav>
             <div class="header-icons">
-                <span class="icon material-symbols-rounded" title="會員">person</span>
-                <span class="icon material-symbols-rounded" title="購物車">shopping_bag</span>
-            </div>
+    <span class="icon material-symbols-rounded menu-icon" id="menu-toggle" title="選單">menu</span> 
+    
+    <a href="#" id="memberIconLink" class="icon" title="會員登入/註冊">
+        <span class="icon material-symbols-rounded" title="會員">person</span>
+        <i class="fas fa-user-circle"></i>
+    </a>
+    
+    <a href="checkout.html" id="cartIconLink" class="icon" title="購物車">
+        <span class="material-symbols-rounded">shopping_bag</span>
+        </a>
+</div>
         </div>
 
     </header>
@@ -49,7 +59,7 @@
 
         </div>
     </section>
-    </main>
+
     <section class="filter-sort-bar">
     <div class="page-content-wrapper">
         
@@ -57,37 +67,21 @@
             
             <div class="filters-dropdowns">
                 
-                <div class="dropdown-container">
-                    <button class="dropdown-btn">
+                <div class="dropdown-container" id="scent-filter-container">
+                    <button class="dropdown-btn" id="scent-filter-btn">
                         依香調篩選 <span class="icon material-symbols-rounded">expand_more</span>
                     </button>
-                    <div class="dropdown-menu">
-                        <a href="#">花香調 (Floral)</a>
-                        <a href="#">木質調 (Woody)</a>
-                        <a href="#">柑橘調 (Citrus)</a>
-                        <a href="#">海洋調 (Marine)</a>
-                        <a href="#">東方調 (Oriental)</a>
+                    <div class="dropdown-menu" id="scent-dropdown-menu">
+                        <a href="#" class="filter-option" data-filter-type="scent" data-filter-value="花香調">花香調 (Floral)</a>
+                        <a href="#" class="filter-option" data-filter-type="scent" data-filter-value="木質調">木質調 (Woody)</a>
+                        <a href="#" class="filter-option" data-filter-type="scent" data-filter-value="柑橘調">柑橘調 (Citrus)</a>
+                        <a href="#" class="filter-option" data-filter-type="scent" data-filter-value="海洋調">海洋調 (Marine)</a>
+                        <a href="#" class="filter-option" data-filter-type="scent" data-filter-value="東方調">東方調 (Oriental)</a>
                     </div>
                 </div>
-                
-                <div class="dropdown-container">
-                    <button class="dropdown-btn">
-                        依功效篩選 <span class="icon material-symbols-rounded">expand_more</span>
-                    </button>
-                    <div class="dropdown-menu">
-                        <a href="#">舒壓放鬆</a>
-                        <a href="#">幫助入眠</a>
-                        <a href="#">提振精神</a>
-                        <a href="#">淨化空間 </a>
-                        <a href="#">情緒穩定 </a>
-                    </div>
-                </div>
-                
             </div>
-
             <div class="sort-display">
-                <p class="product-count">共 12 項產品</p>
-                <button class="dropdown-btn sort-btn">
+                <p class="product-count">共 12 項產品</p> <button class="dropdown-btn sort-btn">
                     排序 <span class="icon material-symbols-rounded">expand_more</span>
                 </button>
             </div>
@@ -98,13 +92,13 @@
 <section class="perfume-products-section">
     <div class="page-content-wrapper">
         <div class="perfume-grid">
-            <article class="perfume-card">
-                <a href="#" class="product-link">
+            <article class="perfume-card"data-scent="花香調">
+                <a href="product.html" class="product-link">
                     <div class="card-image-wrap">
                         <img src="images/perfume_transparent.png" alt="晨曦時光 Dawn's Whisper">
                     </div>
                     <div class="card-text-content">
-                        <p class="perfume-category">#清新花果香調</p>
+                        <p class="perfume-category">#花香調</p>
                         <h3 class="perfume-name">晨曦時光 Dawn's Whisper</h3>
                         
                         <div class="product-footer">
@@ -115,13 +109,13 @@
                 </a>
             </article>
 
-            <article class="perfume-card">
+            <article class="perfume-card"data-scent="海洋調">
                 <a href="#" class="product-link">
                     <div class="card-image-wrap">
                         <img src="images/perfume_blue.png" alt="蔚藍海岸 Azure Coast">
                     </div>
                     <div class="card-text-content">
-                        <p class="perfume-category">#清新海洋木質調</p>
+                        <p class="perfume-category">#海洋調</p>
                         <h3 class="perfume-name">蔚藍海岸 Azure Coast</h3>
                         <div class="product-footer">
                             <span class="product-price">NT$ 3,800</span>
@@ -131,13 +125,13 @@
                 </a>
             </article>
 
-            <article class="perfume-card">
+            <article class="perfume-card"data-scent="東方調">
                 <a href="#" class="product-link">
                     <div class="card-image-wrap">
                         <img src="images/perfume_pink.png" alt="月夜玫瑰 Midnight Rose">
                     </div>
                     <div class="card-text-content">
-                        <p class="perfume-category">#東方花香調</p>
+                        <p class="perfume-category">#東方調</p>
                         <h3 class="perfume-name">月夜玫瑰 Midnight Rose</h3>
                         <div class="product-footer">
                             <span class="product-price">NT$ 4,500</span>
@@ -147,13 +141,13 @@
                 </a>
             </article>
 
-            <article class="perfume-card">
+            <article class="perfume-card"data-scent="木質調">
                 <a href="#" class="product-link">
                     <div class="card-image-wrap">
                         <img src="images/perfume_green.png" alt="綠野仙蹤 Emerald Glade">
                     </div>
                     <div class="card-text-content">
-                        <p class="perfume-category">#綠意草本調</p>
+                        <p class="perfume-category">#木質調</p>
                         <h3 class="perfume-name">綠野仙蹤 Emerald Glade</h3>
                         <div class="product-footer">
                             <span class="product-price">NT$ 2,950</span>
@@ -163,13 +157,13 @@
                 </a>
             </article>
 
-            <article class="perfume-card">
+            <article class="perfume-card"data-scent="柑橘調">
                 <a href="#" class="product-link">
                     <div class="card-image-wrap">
                         <img src="images/perfume_yellow.png" alt="暖陽焦糖 Sunlit Caramel">
                     </div>
                     <div class="card-text-content">
-                        <p class="perfume-category">#美食調</p>
+                        <p class="perfume-category">#柑橘調</p>
                         <h3 class="perfume-name">暖陽焦糖 Sunlit Caramel</h3>
                         <div class="product-footer">
                             <span class="product-price">NT$ 3,500</span>
@@ -179,13 +173,13 @@
                 </a>
             </article>
 
-            <article class="perfume-card">
+            <article class="perfume-card"data-scent="木質調">
                 <a href="#" class="product-link">
                     <div class="card-image-wrap">
                         <img src="images/perfume_transparent.png" alt="蔚藍海岸 Azure Coast">
                     </div>
                     <div class="card-text-content">
-                        <p class="perfume-category">#皮革煙草調</p>
+                        <p class="perfume-category">#木質調</p>
                         <h3 class="perfume-name">皮革密語 Leather Secrets</h3>
                         <div class="product-footer">
                             <span class="product-price">NT$ 4,200</span>
@@ -195,13 +189,13 @@
                 </a>
             </article>
 
-            <article class="perfume-card">
+            <article class="perfume-card"data-scent="花香調">
                 <a href="#" class="product-link">
                     <div class="card-image-wrap">
                         <img src="images/perfume_pink.png" alt="櫻花戀曲 Cherry Blossom Love">
                     </div>
                     <div class="card-text-content">
-                        <p class="perfume-category">#柔和花香調</p>
+                        <p class="perfume-category">#花香調</p>
                         <h3 class="perfume-name">櫻花戀曲 Cherry Blossom Love</h3>
                         <div class="product-footer">
                             <span class="product-price">NT$ 2,800</span>
@@ -211,13 +205,13 @@
                 </a>
             </article>
 
-            <article class="perfume-card">
+            <article class="perfume-card"data-scent="柑橘調">
                 <a href="#" class="product-link">
                     <div class="card-image-wrap">
                         <img src="images/perfume_yellow.png" alt="熱帶雨林 Tropical Downpour">
                     </div>
                     <div class="card-text-content">
-                        <p class="perfume-category">##清新果汁調</p>
+                        <p class="perfume-category">#柑橘調</p>
                         <h3 class="perfume-name">熱帶雨林 Tropical Downpour</h3>
                         <div class="product-footer">
                             <span class="product-price">NT$ 3,100</span>
@@ -227,13 +221,13 @@
                 </a>
             </article>
 
-            <article class="perfume-card">
+            <article class="perfume-card"data-scent="木質調">
                 <a href="#" class="product-link">
                     <div class="card-image-wrap">
                         <img src="images/perfume_yellow.png" alt="蔚藍海岸 Azure Coast">
                     </div>
                     <div class="card-text-content">
-                        <p class="perfume-category">#溫暖琥珀木質調</p>
+                        <p class="perfume-category">#木質調</p>
                         <h3 class="perfume-name">琥珀書房 Amber Study</h3>
                         <div class="product-footer">
                             <span class="product-price">NT$ 3,900</span>
@@ -243,13 +237,13 @@
                 </a>
             </article>
 
-            <article class="perfume-card">
+            <article class="perfume-card"data-scent="花香調">
                 <a href="#" class="product-link">
                     <div class="card-image-wrap">
                         <img src="images/perfume_purple.png" alt="薰衣草田 Lavender Fields">
                     </div>
                     <div class="card-text-content">
-                        <p class="perfume-category">#清新芳香調</p>
+                        <p class="perfume-category">#花香調</p>
                         <h3 class="perfume-name">薰衣草田 Lavender Fields</h3>
                         <div class="product-footer">
                             <span class="product-price">NT$ 2,750</span>
@@ -259,13 +253,13 @@
                 </a>
             </article>
 
-            <article class="perfume-card">
+            <article class="perfume-card"data-scent="花香調">
                 <a href="#" class="product-link">
                     <div class="card-image-wrap">
                         <img src="images/perfume_pink.png" alt="絲絨鳶尾 Velvet Iris">
                     </div>
                     <div class="card-text-content">
-                        <p class="perfume-category">#粉質花香調</p>
+                        <p class="perfume-category">#花香調</p>
                         <h3 class="perfume-name">絲絨鳶尾 Velvet Iris</h3>
                         <div class="product-footer">
                             <span class="product-price">NT$ 4,800</span>
@@ -275,7 +269,7 @@
                 </a>
             </article>
 
-            <article class="perfume-card">
+            <article class="perfume-card"data-scent="柑橘調">
                 <a href="#" class="product-link">
                     <div class="card-image-wrap">
                         <img src="images/perfume_green.png" alt="香檸汽水 Bergamot Fizz">
@@ -294,7 +288,7 @@
             </div>
     </div>
 </section>
-
+</main>
 <footer class="main-footer apricot-bg">
     <div class="page-content-wrapper">
         
@@ -347,5 +341,61 @@
 
     </div>
 </footer>
+<div id="loginModal" class="modal-overlay hidden">
+    
+    <div class="login-modal">
+        
+        <button class="close-btn" aria-label="關閉彈出視窗">×</button>
+
+        <div class="logo-placeholder">
+            <img src="images/logo.jpg" alt="Nectar & Co. Logo">
+        </div>
+        
+        <h2 class="welcome-title">歡迎回來！</h2>
+        <p class="login-prompt">請登入會員</p>
+        
+        <div class="social-login">
+            <a href="#" class="social-icon line" aria-label="使用 Line 登入"><i class="fab fa-line"></i></a>
+            <a href="#" class="social-icon google" aria-label="使用 Google 登入"><i class="fab fa-google"></i></a>
+            <a href="#" class="social-icon facebook" aria-label="使用 Facebook 登入"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        
+        <div class="divider">
+            <span class="divider-text">或</span>
+        </div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="請輸入電子郵件" required>
+            </div>
+            
+            <div class="form-group password-group">
+                <input type="password" id="password" name="password" placeholder="••••••••" required>
+                <button type="button" class="toggle-password" aria-label="顯示密碼">
+                    <i class="far fa-eye-slash"></i>
+                </button>
+            </div>
+            
+            <div class="form-options">
+                <label class="checkbox-container">
+                    <input type="checkbox" checked>
+                    <span class="checkmark"></span>
+                    記住我的密碼
+                </label>
+                <a href="#" class="forgot-password">忘記密碼?</a>
+            </div>
+            
+            <button type="submit" class="login-button">登入</button>
+        </form>
+        
+        <div class="footer-links">
+            <p>還沒有帳號?</p>
+            <a href="#" class="register-link">立即註冊</a>
+        </div>
+    </div>
+</div>
+<script src="index.js"></script>
+<script src="member.js"></script>
+<script src="perfume.js"></script>
 </body>
 </html>
