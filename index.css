@@ -17,7 +17,21 @@
     justify-content: flex-end; /* 內容靠右對齊 */
     align-items: center;
 }
+.hero-content-area {
+    max-width: var(--header-max-width); 
+    margin: 0 auto; 
+    height: 300px; 
+    padding: 0 40px; 
 
+    /* **圖片作為背景圖設定** */
+    background-image: url('images/banner1.png');
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-end; /* 將文字推到最右側 */
+    align-items: center;
+}
 .hero-content {
     width: 50%; 
     text-align: left;
